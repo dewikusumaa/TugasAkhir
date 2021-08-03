@@ -10,10 +10,11 @@ class ProductForm(forms.ModelForm):
 	description 	= forms.CharField(widget=forms.Textarea)
 	price 			= forms.DecimalField()
 	stock 			= forms.IntegerField()
+	satuan			= forms.CharField()
 	#available = forms.BooleanField(widget=forms.RadioSelect(choices=YES_NO))
 
 	class Meta: 
-		fields = ('category', 'name', 'slug', 'image','description', 'price', 'stock')
+		fields = ('category', 'name', 'slug', 'image','description', 'price', 'stock', 'satuan')
 		model = Product
 
 class CategoryForm(forms.ModelForm):

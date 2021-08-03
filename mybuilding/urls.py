@@ -7,14 +7,16 @@ from . import views
 urlpatterns = [
 	path('admin/', admin.site.urls),
 	path('home/', views.index),
+	path('user/', include('user.urls', namespace='user')),
 	path('product_masuk/', include('product_masuk.urls', namespace='product_masuk')),
 	path('supplier/', include('supplier.urls', namespace='supplier')),
 	path('product_keluar/', include('product_keluar.urls', namespace='product_keluar')),
-	# path('accounts/', include('accounts.urls', namespace='accounts')),
+	path('accounts/', include('accounts.urls', namespace='accounts')),
 	# path('customer/', include('customer.urls', namespace='customer')),
 	path('orders/', include('orders.urls', namespace='orders')),
 	path('cart/', include('cart.urls', namespace='cart')),
 	path('', include('building.urls', namespace='building')),
+	path('', include('django.contrib.auth.urls')),
 ]
 if settings.DEBUG:
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

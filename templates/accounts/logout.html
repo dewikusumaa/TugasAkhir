@@ -1,0 +1,9 @@
+
+{% block title %} logout {% endblock %}
+
+	<p>Apakah anda yakin akan logout?</p>
+
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" name="logout">
+	</form>

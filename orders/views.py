@@ -1,10 +1,8 @@
 from building.models import Product
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from .models import Order, OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart 
-# from product_keluar.models import ProductKeluar
-
 
 def order_create(request):
 	cart = Cart(request)
@@ -41,3 +39,8 @@ def orders(request):
 		"orders": orders,
 	}
 	return render(request, 'orders/order.html', context)
+
+def delete_order(request, id):
+	instance = get_object_or_404(OrderItem, id=id)
+	instance.delete()
+	return redirect("/orders/order/")

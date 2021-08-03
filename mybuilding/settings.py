@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'product_keluar.apps.ProductKeluarConfig',
     'supplier.apps.SupplierConfig',
     'product_masuk.apps.ProductMasukConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = '/home'
