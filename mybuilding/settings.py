@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'building.apps.BuildingConfig', 
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
-    'customer.apps.CustomerConfig',
+    # 'customer.apps.CustomerConfig',
     'accounts.apps.AccountsConfig',
     'product_keluar.apps.ProductKeluarConfig',
     'supplier.apps.SupplierConfig',
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'mybuilding.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db6.sqlite3',    
+        'NAME': BASE_DIR / 'db7.sqlite3',    
     }
 }
 
